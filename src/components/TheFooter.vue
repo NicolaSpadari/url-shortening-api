@@ -3,9 +3,7 @@
 		<div class="container">
 			<div class="row justify-between">
 				<div class="col-12 col-lg-3">
-					<p class="text-white text-4xl text-center font-bold text-xl lg:text-left <lg:mb-15">
-						Shortly
-					</p>
+					<Logo class="text-white <lg:(mx-auto mb-15)" />
 				</div>
 				<div class="col-12 col-lg-2">
 					<page-column :pages="firstColPages">

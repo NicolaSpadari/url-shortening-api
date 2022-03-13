@@ -4,9 +4,7 @@
 			<div class="flex items-center justify-between">
 				<div class="flex">
 					<div class="brand">
-						<p class="text-dark font-bold text-4xl">
-							Shortly
-						</p>
+						<Logo class="text-dark" />
 					</div>
 					<div class="<lg:hidden pages ml-12">
 						<div class="flex items-center space-x-12 h-full">

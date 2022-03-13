@@ -37,23 +37,15 @@
 </template>
 
 <script lang="ts" setup>
-	const BASE_URL = "https://api.shrtco.de/v2/shorten";
 	const input = ref("");
 	const error = ref("");
-	const loading = ref(false);
 	const results = ref<ShortenedLink[]>([]);
 
 	const shorten = async() => {
-		loading.value = true;
+		const result = await useShortener(input.value);
 
-		try {
-			const { data: { result } } = await axios.get(`${BASE_URL}?url=${input.value}`);
-			results.value.push(result);
-		} catch (err) {
-			console.error(`Error while fetching ${input.value}: `, err);
-		} finally {
-			loading.value = false;
-		}
+		results.value.push(result);
+		input.value = "";
 	};
 
 	const validateUrl = (): void => {
@@ -70,7 +62,6 @@
 
 			if (url.protocol === "http:" || url.protocol === "https:") {
 				error.value = "";
-				input.value = "";
 				shorten();
 			} else {
 				error.value = "Please enter a valid link";

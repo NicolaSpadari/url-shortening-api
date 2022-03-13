@@ -10,7 +10,7 @@ import type { Resolver } from "unplugin-auto-import/dist/types";
 const compositionResolver: Resolver = (name) => {
 	const isCompositionApi = name.startsWith("use");
 	if (isCompositionApi) {
-        return `@/composables/${name}`;
+        return `@composables/${name}`;
 	}
 };
 
